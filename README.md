@@ -2,7 +2,30 @@
 
 Link to the website: https://westcoastgod-photography.vercel.app/
 
-![HiFi Website Design](public/images/hifi_web.jpg)
+![HiFi Website Design](frontend/public/images/hifi_web.jpg)
+
+# Project Structure & Setup
+
+This project is organized as a monorepo:
+
+- **`frontend/`**: React + Vite application (Website)
+- **`backend/`**: FastAPI + Python application (AI Models & Stargazing API)
+
+## How to Run Locally
+
+### 1. Frontend (Website)
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### 2. Backend (API)
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
 # Future Ideas
 
@@ -25,7 +48,7 @@ Link to the website: https://westcoastgod-photography.vercel.app/
 ## 08/06/2025
 
 - Add dark mode to the website, automatically change according to user system
-  ![dark mode](public/images/dark_mode.jpg)
+  ![dark mode](frontend/public/images/dark_mode.jpg)
 
 ## 29/05/2025
 
@@ -37,7 +60,7 @@ Link to the website: https://westcoastgod-photography.vercel.app/
 
 - Initiate Hong Kong Stargazing Page
 - Light pollution map source from [Mr. David Lorenz](https://djlorenz.github.io/astronomy/lp/), blurred using Gaussian blur in Photoshop
-  ![HK Stargazing lofi hifi](public/images/hkstar_lofi_hifi.jpg)
+  ![HK Stargazing lofi hifi](frontend/public/images/hkstar_lofi_hifi.jpg)
 
 ## 24/05/2025
 
@@ -53,7 +76,7 @@ Link to the website: https://westcoastgod-photography.vercel.app/
 ## 22/05/2025
 
 - Add full screen viewing photo mode, previous photo and next photo buttons
-  ![LoFi Website Design](public/images/photo_viewing_windows.jpg)
+  ![LoFi Website Design](frontend/public/images/photo_viewing_windows.jpg)
 
 ## 21/05/2025
 
@@ -70,4 +93,4 @@ Link to the website: https://westcoastgod-photography.vercel.app/
 - Add photos to Home page, adapts Waterfall Design
 - Deploy website at Vercel
 - Lo-Fi Website Design
-  ![LoFi Website Design](public/images/lofi_web.jpg)
+  ![LoFi Website Design](frontend/public/images/lofi_web.jpg)
