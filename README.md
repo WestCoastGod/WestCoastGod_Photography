@@ -11,7 +11,7 @@ This project is organized as a monorepo:
 - **`frontend/`**: React + Vite application (Website)
 - **`backend/`**: FastAPI + Python application (AI Models & Stargazing API)
 
-## How to Run Locally
+## To Run Locally
 
 ### 1. Frontend (Website)
 ```bash
