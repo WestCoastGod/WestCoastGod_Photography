@@ -25,12 +25,12 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-# Future Ideas
-
-- Set up Google Search Console to make the website searchable
-- Add notes to the stargazing prediction website
-
 # Development Logs
+
+## 6/12/2025
+- Add generating of image from music emotion function to the new page Music to Image.
+- Now can upload music audio and receive an image with related emotion.
+![music to image](frontend/public/images/music_to_image_page.jpg)
 
 ## 11/10/2025
 
