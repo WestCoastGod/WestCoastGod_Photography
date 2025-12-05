@@ -1,3 +1,30 @@
 node_modules/
 dist/
 .env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env/
+
+# Large Model Files (AI/ML)
+*.pth
+*.pt
+*.pkl
+*.joblib
+*.h5
+*.onnx
+
+# Backend Data Cache
+backend/stargazing/data/forecast_cache.json
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# CSV Files
+*.csv

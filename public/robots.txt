@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://westcoastgod-photography.vercel.app/sitemap.xml

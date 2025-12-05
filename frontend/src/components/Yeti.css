@@ -1,0 +1,169 @@
+.wrapper {
+  position: relative;
+  width: 180px;
+  height: 250px;
+  margin: 0 auto;
+}
+.yeti {
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+  width: 110px;
+  height: 220px;
+  z-index: 2;
+}
+.yeti__horns {
+  position: absolute;
+  top: 0;
+  left: 48%;
+  width: 0%;
+  height: 60px;
+  transform: translateX(-50%) perspective(30em)
+    rotateY(calc((var(--mouse-progress-x, 0.15) - 0.15) * 25deg)); /* Adjusted X center */
+}
+.yeti__horn {
+  width: 70px;
+  height: 70px;
+}
+.yeti__body {
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  width: 95%;
+  height: 100%;
+  background: linear-gradient(180deg, #fff 0%, #d9f5f2 75%);
+  border-radius: 999em 999em 0 0;
+  z-index: 2;
+}
+.yeti__eyes {
+  position: absolute;
+  bottom: 61.8%;
+  left: calc(50% - 42px);
+  width: 78px;
+  height: 40px;
+  z-index: 3;
+}
+.yeti__eye {
+  position: absolute;
+  bottom: 0;
+  width: 37px;
+  height: 40px;
+  background: radial-gradient(ellipse at 50% 82%, #00ffe5 0%, #2cccbc 100%);
+  border-radius: 999em 999em 0 0;
+}
+.yeti__eye:first-child {
+  left: 0;
+}
+.yeti__eye:last-child {
+  right: 0;
+}
+.yeti__eye:before,
+.yeti__eye:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+.yeti__eye:before {
+  bottom: 11px; /* Adjusted up for centering */
+  left: 10px;
+  width: 17px;
+  height: 17px;
+  background-color: black;
+  border-radius: 50%;
+  transform: translate3d(
+    calc(max(-8px, min(8px, (var(--mouse-progress-x, 0.15) - 0.15) * 10px))),
+    /* Restrict horizontal movement between -8px and +8px */
+      calc(max(-8px, min(8px, (var(--mouse-progress-y, 0.9) - 0.9) * 15px))),
+    /* Restrict vertical movement between -8px and +8px */ 0
+  );
+  z-index: 2;
+}
+.yeti__eye:after {
+  bottom: 15px; /* Adjusted up for centering */
+  left: 16px;
+  width: 5px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate3d(
+    calc(max(-20px, min(12px, (var(--mouse-progress-x, 0.15) - 0.15) * 17px))),
+    /* Restrict horizontal movement between -10px and +10px */
+      calc(max(-13px, min(10px, (var(--mouse-progress-y, 0.9) - 0.9) * 22px))),
+    /* Restrict vertical movement between -10px and +10px */ 0
+  );
+  z-index: 3;
+}
+.yeti__mouth {
+  position: absolute;
+  bottom: 80px;
+  left: 27px;
+  width: 50px;
+  height: 30px;
+  background-color: black;
+  transform: perspective(20em)
+    rotateY(calc((var(--mouse-progress-x, 0.15) - 0.15) * 25deg)); /* Adjusted X center */
+  z-index: 3;
+  border-radius: 0 0 10px 10px;
+}
+.yeti__mouth:before,
+.yeti__mouth:after {
+  display: block;
+  position: absolute;
+  top: 0%;
+  width: 15px;
+  height: 10px;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  content: "";
+}
+.yeti__mouth:before {
+  left: 26px;
+}
+.yeti__mouth:after {
+  right: 26px;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --horn-gradient-stop-0: rgb(
+      219,
+      242,
+      255
+    ); /* Example: Light grey for stop 0 */
+    --horn-gradient-stop-1: rgb(
+      248,
+      210,
+      240
+    ); /* Example: Slightly darker grey for stop 1 */
+  }
+  .yeti__body {
+    background: linear-gradient(
+      180deg,
+      rgb(0, 208, 255) 0%,
+      #e6e6fa 100%
+    ); /* Light grey gradient */
+  }
+
+  .yeti__eye {
+    background: radial-gradient(
+      ellipse at 50% 82%,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 100%
+    ); /* Light sky blue to steel blue */
+  }
+
+  .yeti__eye:before {
+    background-color: rgb(0, 0, 0); /* Dark grey pupil */
+  }
+
+  .yeti__eye:after {
+    background-color: rgb(255, 255, 255); /* Off-white eye shine */
+  }
+
+  .yeti__mouth {
+    background-color: rgb(0, 0, 0); /* Light grey mouth */
+  }
+  .yeti__mouth:before,
+  .yeti__mouth:after {
+    background-color: rgb(255, 255, 255); /* Dark grey mouth and fangs */
+  }
+}
