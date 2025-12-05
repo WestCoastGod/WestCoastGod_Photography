@@ -89,27 +89,27 @@ const MusicToImage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white p-8 flex flex-col items-center">
+    <div className="fixed inset-0 lg:left-48 bg-white dark:bg-black text-gray-900 dark:text-white p-4 md:p-8 flex flex-col items-center overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="max-w-7xl w-full"
+        className="max-w-7xl w-full h-full flex flex-col"
       >
-        <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-            Give me a music, I will show you how happy or sad it is...
+        <div className="text-center mb-4 lg:mb-8 flex-none mt-12 lg:mt-0 px-4">
+          <h1 className="text-lg md:text-4xl font-bold mb-2 md:mb-4 text-gray-900 dark:text-white leading-tight">
+            Drop a beat, and I'll expose its emotional baggage.
           </h1>
         
-            <p className="text-xl text-gray-600 dark:text-gray-400">
+            <p className="text-sm md:text-xl text-gray-600 dark:text-gray-400">
                 Generate image based on the emotion of your music!
             </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-rows-2 lg:grid-rows-1 grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 flex-grow min-h-0">
           {/* Left Column: Upload & Controls */}
-          <div className="flex flex-col h-full">
+          <div className="flex flex-col h-full min-h-0">
             <motion.div 
-              className={`relative border-2 border-dashed rounded-2xl p-12 text-center transition-all duration-300 cursor-pointer flex-grow flex flex-col justify-center items-center min-h-[500px]
+              className={`relative border-2 border-dashed rounded-2xl p-4 md:p-12 text-center transition-all duration-300 cursor-pointer flex-grow flex flex-col justify-center items-center overflow-hidden
                 ${dragActive ? 'border-blue-500 bg-blue-500/10' : 'border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500 bg-gray-50 dark:bg-gray-800/50'}
                 ${file ? 'border-green-500/50' : ''}
               `}
@@ -129,29 +129,29 @@ const MusicToImage: React.FC = () => {
                 className="hidden"
               />
               
-              <div className="flex flex-col items-center justify-center space-y-4 w-full max-w-2xl">
+              <div className="flex flex-col items-center justify-center space-y-2 md:space-y-4 w-full max-w-2xl">
                 {file ? (
                   <>
-                    <div className="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 dark:text-green-400">
-                      <FaMusic size={48} />
+                    <div className="w-16 h-16 md:w-24 md:h-24 bg-green-500/20 rounded-full flex items-center justify-center text-green-600 dark:text-green-400">
+                      <FaMusic size={32} className="md:text-5xl" />
                     </div>
                     <div>
-                      <p className="font-semibold text-2xl text-green-600 dark:text-green-400">{file.name}</p>
-                      <p className="text-lg text-gray-500">{(file.size / 1024 / 1024).toFixed(2)} MB</p>
+                      <p className="font-semibold text-lg md:text-2xl text-green-600 dark:text-green-400 truncate max-w-[200px] md:max-w-full">{file.name}</p>
+                      <p className="text-sm md:text-lg text-gray-500">{(file.size / 1024 / 1024).toFixed(2)} MB</p>
                     </div>
                     {audioUrl && (
-                      <audio controls src={audioUrl} className="mt-6 w-full" onClick={(e) => e.stopPropagation()} />
+                      <audio controls src={audioUrl} className="mt-2 md:mt-6 w-full" onClick={(e) => e.stopPropagation()} />
                     )}
-                    <p className="text-xs text-gray-500 mt-2">Click or drag to replace</p>
+                    <p className="text-[10px] md:text-xs text-gray-500 mt-1 md:mt-2">Click or drag to replace</p>
                   </>
                 ) : (
                   <>
-                    <div className="w-24 h-24 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400">
-                      <FaCloudUploadAlt size={48} />
+                    <div className="w-16 h-16 md:w-24 md:h-24 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400">
+                      <FaCloudUploadAlt size={32} className="md:text-5xl" />
                     </div>
                     <div>
-                      <p className="font-semibold text-2xl">Drop your music here</p>
-                      <p className="text-lg text-gray-500">or click to browse</p>
+                      <p className="font-semibold text-lg md:text-2xl">Drop your music here</p>
+                      <p className="text-sm md:text-lg text-gray-500">or click to browse</p>
                     </div>
                   </>
                 )}
@@ -161,10 +161,10 @@ const MusicToImage: React.FC = () => {
             <motion.button
               onClick={handleSubmit}
               disabled={!file || loading}
-              className={`w-full py-4 mt-8 rounded-xl font-bold text-lg flex items-center justify-center gap-3 transition-all
-                ${!file || loading 
-                  ? 'bg-gray-200 dark:bg-gray-800 text-gray-400 dark:text-gray-500 cursor-not-allowed' 
-                  : 'bg-black dark:bg-gray-700 text-white dark:text-white border border-transparent dark:border-gray-600 hover:opacity-80 shadow-lg'}
+              className={`w-full py-3 md:py-4 mt-4 md:mt-8 rounded-xl font-bold text-base md:text-lg flex items-center justify-center gap-3 transition-all flex-none 
+                  ${(!file || loading) 
+                    ? 'bg-gray-200 dark:bg-gray-800 text-black dark:text-gray-500 cursor-not-allowed' 
+                    : 'bg-black dark:bg-gray-700 text-white dark:text-white border border-transparent dark:border-gray-600 hover:opacity-80 shadow-lg'}
               `}
               whileHover={!file || loading ? {} : { scale: 1.02 }}
               whileTap={!file || loading ? {} : { scale: 0.98 }}
@@ -176,12 +176,11 @@ const MusicToImage: React.FC = () => {
                 </>
               ) : (
                 <>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path d="M8.32181 14.4933C7.3798 15.9862 6.90879 16.7327 7.22969 17.3433C7.55059 17.9538 8.45088 18.0241 10.2514 18.1647L10.7173 18.201C11.2289 18.241 11.4848 18.261 11.7084 18.3785C11.9321 18.4961 12.0983 18.6979 12.4306 19.1015L12.7331 19.469C13.9026 20.8895 14.4873 21.5997 15.1543 21.5084C15.8213 21.417 16.1289 20.5846 16.7439 18.9198L16.9031 18.4891C17.0778 18.0161 17.1652 17.7795 17.3369 17.6078C17.5086 17.4362 17.7451 17.3488 18.2182 17.174L18.6489 17.0149C20.3137 16.3998 21.1461 16.0923 21.2374 15.4253C21.3288 14.7583 20.6185 14.1735 19.1981 13.0041M17.8938 10.5224C17.7532 8.72179 17.6829 7.8215 17.0723 7.5006C16.4618 7.1797 15.7153 7.65071 14.2224 8.59272L13.8361 8.83643C13.4119 9.10412 13.1998 9.23797 12.9554 9.27143C12.7111 9.30488 12.4622 9.23416 11.9644 9.09271L11.5113 8.96394C9.75959 8.46619 8.88375 8.21732 8.41508 8.68599C7.94641 9.15467 8.19528 10.0305 8.69303 11.7822" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M13.5 6.5L13 6M9.5 2.5L11.5 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M6.5 6.5L4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                    <path d="M6 12L4.5 10.5M2 8L2.5 8.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                  </svg>
+                  <img 
+                    src="/images/star_generate.svg" 
+                    alt="Generate" 
+                    className={`w-6 h-6 ${!file ? 'dark:invert' : 'invert'}`} 
+                  />
                   <span>Generate</span>
                 </>
               )}
@@ -202,7 +201,7 @@ const MusicToImage: React.FC = () => {
           </div>
 
           {/* Right Column: Results */}
-          <div className="flex flex-col items-center justify-center min-h-[600px] h-full bg-gray-100 dark:bg-gray-800/30 rounded-3xl border border-gray-200 dark:border-gray-700/50 p-8 relative overflow-hidden">
+          <div className="flex flex-col items-center justify-center h-full min-h-0 bg-gray-100 dark:bg-gray-800/30 rounded-3xl border border-gray-200 dark:border-gray-700/50 p-4 md:p-8 relative overflow-hidden">
             <AnimatePresence mode="wait">
               {loading ? (
                 <motion.div
