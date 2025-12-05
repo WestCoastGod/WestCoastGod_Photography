@@ -6,10 +6,8 @@ Link to the website: https://westcoastgod-photography.vercel.app/
 
 # Project Structure & Setup
 
-This project is organized as a monorepo:
-
-- **`frontend/`**: React + Vite application (Website)
-- **`backend/`**: FastAPI + Python application (AI Models & Stargazing API)
+- **`Frontend`**: React + Vite application (Website)
+- **`Backend`**: FastAPI + Python application (AI Models & Stargazing API), Hosted on Hugging Face
 
 ## To Run Locally
 
