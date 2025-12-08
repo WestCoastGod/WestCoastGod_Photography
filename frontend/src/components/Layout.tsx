@@ -1,18 +1,15 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import { useState } from "react";
 import { Analytics } from "@vercel/analytics/react";
 
 const Layout = () => {
-  const location = useLocation();
-  const hideSidebar = location.pathname === "/";
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <div className="flex min-h-screen">
       {/* Sidebar: 大螢幕顯示，小螢幕根據 sidebarOpen 顯示 */}
-      {!hideSidebar && (
-        <>
+      <>
           {/* 遮罩，sidebarOpen 時淡入淡出 */}
           <div
             className={`
@@ -39,13 +36,11 @@ const Layout = () => {
             <Sidebar />
           </div>
         </>
-      )}
       <main
-        className={`${!hideSidebar ? "flex-1 p-8 lg:ml-48" : "flex-1 p-8"}`}
+        className="flex-1 p-8 lg:ml-48"
       >
         {/* 小螢幕顯示 Sidebar 開關按鈕 */}
-        {!hideSidebar && (
-          <button
+        <button
             className="lg:hidden fixed top-4 left-4 z-[500] bg-white dark:bg-black rounded"
             onClick={() => setSidebarOpen((open) => !open)}
           >
@@ -64,7 +59,6 @@ const Layout = () => {
               />
             </svg>
           </button>
-        )}
         <Outlet />
       </main>
       <Analytics />
