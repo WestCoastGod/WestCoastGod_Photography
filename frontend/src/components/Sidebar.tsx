@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div className="w-48 bg-white dark:bg-black shadow-none fixed h-full flex flex-col items-start p-10 z-[2000]">
       {/* 头像链接 */}
-      <Link to="/" className="block mb-4">
+      <Link to="/welcome" className="block mb-4">
         <img
           src="/images/Profile%20Photo.JPG"
           className="w-24 h-24 rounded-full mx-auto hover:opacity-80 transition-opacity profile-photo"
