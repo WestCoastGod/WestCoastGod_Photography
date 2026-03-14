@@ -1,12 +1,19 @@
 from PIL import Image
 import os
 
-folder = r"photos"
-low_quality_folder = r"low_quality"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+PUBLIC_DIR = os.path.normpath(os.path.join(SCRIPT_DIR, "..", "public"))
+
+folder = os.path.join(PUBLIC_DIR, "images", "photos")
+low_quality_folder = os.path.join(PUBLIC_DIR, "images", "low_quality")
+
 MAX_SIZE = int(1.5 * 1048576)  # 1.5MB for reduced image
 MAX_PIXELS = 10000000  # 10MP for reduced image
 LOW_QUALITY_TARGET = 200 * 1024  # 200KB for low quality preview
 LOW_QUALITY_WIDTH = 1280  # Max width for low quality
+
+if not os.path.isdir(folder):
+    raise FileNotFoundError(f"Photos folder not found: {folder}")
 
 os.makedirs(low_quality_folder, exist_ok=True)
 

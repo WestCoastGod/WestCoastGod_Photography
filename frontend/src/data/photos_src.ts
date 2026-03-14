@@ -441,14 +441,13 @@ const originalPhotos = [
     title: "Upstairs Residence",
     desc: "Hidden somewhere in the mountains.",
   },
-      {
+  {
     id: 66,
-    src: "/images/photos/habour_foggy.jpg",
-    low: "/images/low_quality/habour_foggy.jpg",
-    title: "Foggy Harbour",
-    desc: "Mystery habour.",
+    src: "/images/photos/環回北路夜景.jpg",
+    low: "/images/low_quality/環回北路夜景.jpg",
+    title: "Train",
+    desc: "My first long exposure photo.",
   },
-
   {
     id: 67,
     src: "/images/photos/神武門.jpg",
@@ -541,13 +540,13 @@ const originalPhotos = [
     desc: "Good night 🌃",
   },
   {
-    id: 66,
-    src: "/images/photos/環回北路夜景.jpg",
-    low: "/images/low_quality/環回北路夜景.jpg",
-    title: "Train",
-    desc: "My first long exposure photo.",
+    id: 80,
+    src: "/images/photos/habour_foggy.jpg",
+    low: "/images/low_quality/habour_foggy.jpg",
+    title: "Foggy Harbour",
+    desc: "Mystery habour.",
   },
-    {
+  {
     id: 81,
     src: "/images/photos/habour.jpg",
     low: "/images/low_quality/habour.jpg",
@@ -574,7 +573,63 @@ const originalPhotos = [
     low: "/images/low_quality/lake_ad_excellentiam.JPG",
     title: "Lake Ad Excellentiam",
     desc: "Aesthetic Lake",
-  }
+  },
+    {
+      id: 85,
+      src: "/images/photos/single_tree.jpg",
+      low: "/images/low_quality/single_tree.jpg",
+      title: "Single Tree",
+      desc: "Tough.",
+    },
+    {
+      id: 86,
+      src: "/images/photos/snowflask.jpg",
+      low: "/images/low_quality/snowflask.jpg",
+      title: "Snowing Tree",
+      desc: "Tranquil.",
+    },
+    {
+      id: 87,
+      src: "/images/photos/snowmountain_moon_forest.jpg",
+      low: "/images/low_quality/snowmountain_moon_forest.jpg",
+      title: "Moon Snow Mountain Forest",
+      desc: "From up to down, it is Xinjiang.",
+    },
+    {
+      id: 88,
+      src: "/images/photos/snowy_road.jpg",
+      low: "/images/low_quality/snowy_road.jpg",
+      title: "Snowy Road",
+      desc: "It's creamy.",
+    },
+    {
+      id: 89,
+      src: "/images/photos/snow_inifinit_road.jpg",
+      low: "/images/low_quality/snow_inifinit_road.jpg",
+      title: "The beginning of the road",
+      desc: "As though the road is infinite, but it is not.",
+    },
+    {
+      id: 90,
+      src: "/images/photos/sugong_tower_inside.jpg",
+      low: "/images/low_quality/sugong_tower_inside.jpg",
+      title: "Emin Minaret Inside",
+      desc: "An Islamic architecture in Turpan, Xinjiang.",
+    },
+    {
+      id: 91,
+      src: "/images/photos/the_tree.jpg",
+      low: "/images/low_quality/the_tree.jpg",
+      title: "The Tree",
+      desc: "Standing alone.",
+    },
+    {
+      id: 92,
+      src: "/images/photos/usman_in_sugong_smoke.jpg",
+      low: "/images/low_quality/usman_in_sugong_smoke.jpg",
+      title: "His Silhouette",
+      desc: "Figure seen from behind at the Emin Minaret.",
+    }
 ];
 
 export default originalPhotos;
