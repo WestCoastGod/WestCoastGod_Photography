@@ -1,7 +1,6 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from stargazing.stargazing_service import get_7day_stargazing_forecast
-from music_to_image.music_image_service import generate_image_from_music
 
 app = FastAPI()
 app.add_middleware(
@@ -25,4 +24,10 @@ def stargazing_forecast():
 
 @app.post("/api/music-to-image")
 async def music_to_image(file: UploadFile = File(...)):
-    return await generate_image_from_music(file)
+    try:
+        # Lazy import keeps stargazing API available even if music dependencies fail.
+        from music_to_image.music_image_service import generate_image_from_music
+
+        return await generate_image_from_music(file)
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"Music service unavailable: {exc}")
