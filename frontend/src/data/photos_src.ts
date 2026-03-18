@@ -629,6 +629,13 @@ const originalPhotos = [
       low: "/images/low_quality/usman_in_sugong_smoke.jpg",
       title: "His Silhouette",
       desc: "Figure seen from behind at the Emin Minaret.",
+    },
+    {
+      id: 93,
+      src: "/images/photos/kanasi_starry.jpg",
+      low: "/images/low_quality/kanasi_starry.jpg",
+      title: "Kanasi Starry Night",
+      desc: "The starry night in Kanasi, Xinjiang.",
     }
 ];
 
