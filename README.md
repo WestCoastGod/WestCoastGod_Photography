@@ -1,6 +1,6 @@
 # WestCoastGod Photography
 
-Link to the website: https://westcoastgod-photography.vercel.app/
+Link to the website: [https://westcoastgod-photography.vercel.app/hk-stargazing/](https://westcoastgod-photography.vercel.app/hk-stargazing/)
 
 ![HiFi Website Design](frontend/public/images/hifi_web.jpg)
 
